@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#081321">
+  <title>SEA BATTLE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">✦</div>
+        <div>
+          <div class="brand-name">SEA BATTLE</div>
+          <div class="brand-sub" data-i18n="subtitle">ТЕҢІЗ ШАЙҚАСЫ</div>
+        </div>
+      </div>
+      <select id="language" aria-label="Language">
+        <option value="kk">ҚАЗ</option>
+        <option value="ru">РУС</option>
+        <option value="en">ENG</option>
+      </select>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow" data-i18n="setup">ОЙЫНДЫ ДАЙЫНДАУ</div>
+      <h1 data-i18n="title">ФЛОТТЫ ОРНАЛАСТЫР</h1>
+      <p data-i18n="description">Кемелеріңді орналастыр. Қарсыласпен шайқасқа дайындал.</p>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-top">
+        <span data-i18n="progress">ДАЙЫНДЫҚ</span>
+        <strong id="progressText">0 / 10</strong>
+      </div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div class="progress-bottom">
+        <span id="progressHint" data-i18n="placeShips">10 кемені орналастыр</span>
+        <span class="status-dot"><i></i><span data-i18n="yourFleet">СЕНІҢ ФЛОТЫҢ</span></span>
+      </div>
+    </section>
+
+    <section class="board-card">
+      <div class="board-heading">
+        <div>
+          <div class="section-label" data-i18n="yourBoard">СЕНІҢ ТАҚТАҢ</div>
+          <div class="board-caption" data-i18n="boardSize">10 × 10 ОЙЫН АЛАҢЫ</div>
+        </div>
+        <div class="board-badge">10 × 10</div>
+      </div>
+      <div class="board-wrap">
+        <div class="axis-corner"></div>
+        <div class="col-labels" id="colLabels"></div>
+        <div class="row-labels" id="rowLabels"></div>
+        <div id="board" class="board" aria-label="10 by 10 game board"></div>
+      </div>
+      <div class="board-legend">
+        <span><i class="legend-cell empty"></i><span data-i18n="empty">Бос ұяшық</span></span>
+        <span><i class="legend-cell ship"></i><span data-i18n="ship">Кеме</span></span>
+      </div>
+    </section>
+
+    <section class="fleet-card">
+      <div class="fleet-heading">
+        <div>
+          <div class="section-label" data-i18n="fleet">КЕМЕЛЕР ФЛОТЫ</div>
+          <div class="board-caption" data-i18n="fleetHint">Келесі кемені орналастыр</div>
+        </div>
+        <span class="fleet-count" id="fleetCount">0/10</span>
+      </div>
+      <div class="ship-list" id="shipList"></div>
+    </section>
+
+    <section class="controls-card">
+      <div class="section-label" data-i18n="controls">БАСҚАРУ</div>
+      <div class="control-row">
+        <button class="control-btn" id="rotateBtn">
+          <span class="control-icon">↻</span>
+          <span data-i18n="rotate">Бұру</span>
+          <small id="directionText">Көлденең</small>
+        </button>
+        <button class="control-btn" id="undoBtn" disabled>
+          <span class="control-icon">↶</span>
+          <span data-i18n="undo">Қайтару</span>
+          <small data-i18n="lastMove">Соңғы әрекет</small>
+        </button>
+      </div>
+      <div class="control-row">
+        <button class="secondary-btn" id="autoBtn">
+          <span>✦</span><span data-i18n="auto">Автоматты орналастыру</span>
+        </button>
+        <button class="secondary-btn reset-btn" id="resetBtn">
+          <span>⟲</span><span data-i18n="reset">Қайта бастау</span>
+        </button>
+      </div>
+      <button class="ready-btn" id="readyBtn" disabled>
+        <span data-i18n="ready">ДАЙЫН</span><span>→</span>
+      </button>
+      <p class="footnote" data-i18n="footnote">Кемелер бір-біріне, тіпті қиғашынан да тиіспеуі керек.</p>
+    </section>
+    <footer>SEA BATTLE <span>•</span> STRATEGY STARTS HERE</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
